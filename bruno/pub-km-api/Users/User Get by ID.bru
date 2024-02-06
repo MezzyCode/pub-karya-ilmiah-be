@@ -1,0 +1,15 @@
+meta {
+  name: User Get by ID
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:3000/user-get/{{id}}
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  id: 5f4f7ebb-b4d6-4d06-94ac-61310611f6fb
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Get Projects by ID
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:3000/project-get/{{project_id}}
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  project_id: b0cb113c-4844-4f0d-8e1f-11c67cc1a3c0
+}

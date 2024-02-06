@@ -1,0 +1,28 @@
+meta {
+  name: Create Project
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/project-create
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "project_created_by": "05c1ba6b-3c1d-4844-8f87-b9e4b80085f9",
+    "project_collaborator": "solo",
+    "project_name": "Project 2",
+    "project_img": "",
+    "project_desc": "desc daaa",
+    "project_lang": "Breh",
+    "project_status": "In Progress",
+    "project_article": "article-link",
+    "project_source_code": "source-code",
+    "project_rating": "50",
+    "project_review": "Good Enough",
+    "project_reviewer": "Dosen"
+  }
+}

@@ -39,7 +39,7 @@ const editUser = async (id, updatedData) => {
 };
 
 const deleteUserById = async (id) => {
-  await pool.query('DELETE FROM users WHERE id=$1', [id]);
+  await pool.query('DELETE FROM users WHERE user_id=$1', [id]);
 };
 
 module.exports = {

@@ -1,0 +1,24 @@
+meta {
+  name: Edit User by ID
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:3000/user-edit/{{id}}
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "Super Admin",
+    "password": "supadmin",
+    "email": "testa@gmail.com",
+    "role": "superadmin"
+  }
+}
+
+vars:pre-request {
+  id: 5f4f7ebb-b4d6-4d06-94ac-61310611f6fb
+}
