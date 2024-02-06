@@ -1,6 +1,6 @@
 # pub-karya-ilmiah-be
 
-Back-end for ... 
+Back-end for [pub-karya-ilmiah](https://github.com/MezzyCode/pub-karya-ilmiah)
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ yarn install
 
 This project requires a PostgreSQL table. Execute the following SQL commands to set up the required table:
 
-```postgres
+```sql
 -- Table: public.projects
 
 -- DROP TABLE IF EXISTS public.projects;
@@ -80,7 +80,7 @@ COMMENT ON CONSTRAINT email_unique ON public.users
 
 Create a .env file in the root directory with the following content:
 
-```env
+```ini
 PORT=3000
 
 # POSTGRES
