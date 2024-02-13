@@ -1,13 +1,16 @@
 const { v4: uuidv4 } = require('uuid');
 const { pool } = require('../config/dbConfig');
+const bcrypt = require('bcrypt');
 
 // User model schema is:
-// user_id [uuid]
-// username, password, email, role [varchar]
+// id [uuid]
+// username [250], password [50], email [255] [varchar]
+// role [numeric 1-5]
 
 const createUser = async (data) => {
   const id = uuidv4();
-  const columns = [...Object.keys(data), 'user_id'];
+  data.password = await bcrypt.hash(data.password, 10);
+  const columns = [...Object.keys(data), 'id'];
   const values = [...Object.values(data), id];
 
   const result = await pool.query(
@@ -23,7 +26,7 @@ const getUser = async () => {
 };
 
 const getUserById = async (id) => {
-  const result = await pool.query('SELECT * FROM users WHERE user_id=$1', [id]);
+  const result = await pool.query('SELECT * FROM users WHERE id=$1', [id]);
   return result.rows[0];
 };
 
@@ -32,14 +35,14 @@ const editUser = async (id, updatedData) => {
   const values = Object.values(updatedData);
 
   const result = await pool.query(
-    `UPDATE users SET ${columns.map((col, index) => `${col}=$${index + 1}`).join(', ')} WHERE user_id=$${columns.length + 1} RETURNING *`,
+    `UPDATE users SET ${columns.map((col, index) => `${col}=$${index + 1}`).join(', ')} WHERE id=$${columns.length + 1} RETURNING *`,
     [...values, id],
   );
   return result.rows[0];
 };
 
 const deleteUserById = async (id) => {
-  await pool.query('DELETE FROM users WHERE user_id=$1', [id]);
+  await pool.query('DELETE FROM users WHERE id=$1', [id]);
 };
 
 module.exports = {

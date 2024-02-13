@@ -15,6 +15,7 @@ const handleQueryError = (req, res, err) => {
       break;
     default:
       res.status(500).json(err);
+      console.log(err);
       break;
   }
 };
