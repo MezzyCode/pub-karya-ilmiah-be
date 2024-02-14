@@ -27,7 +27,7 @@ const login = async (req, res) => {
     }
 
     // Create and send JWT token
-    const token = jwt.sign({ user_id: user.id, username: user.username }, process.env.JWT_SECRET_KEY, {
+    const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET_KEY, {
       expiresIn: '1h', // Token expiration time
     });
 
@@ -38,6 +38,12 @@ const login = async (req, res) => {
   }
 }
 
+const logout = async (req, res) => {
+  currentToken = currentToken.filter(token => token !== req.body.token);
+  res.status(204);
+}
+
 module.exports = {
-  login
+  login,
+  logout
 };

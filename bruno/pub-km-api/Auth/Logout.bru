@@ -1,0 +1,17 @@
+meta {
+  name: Logout
+  type: http
+  seq: 2
+}
+
+delete {
+  url: http://localhost:3000/logout
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI2NjY0NzZmLWIwOTctNGVhYy1hMDFmLTUyZTcwYjcyZmU4MCIsImVtYWlsIjoidGVzdC10d29AcmVzZWF2dWUuY29tIiwiaWF0IjoxNzA3OTI2MDQ0LCJleHAiOjE3MDc5Mjk2NDR9.X4axs6kYC6TYN8Fp5m1Tfy7qs1hqUysOGGV65tpxMok"
+  }
+}

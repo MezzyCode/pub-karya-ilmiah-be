@@ -5,7 +5,14 @@ meta {
 }
 
 post {
-  url: awdwa
-  body: none
+  url: http://localhost:3000/login
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "email": "test-two@reseavue.com",
+    "password": "GamerRock"
+  }
 }
