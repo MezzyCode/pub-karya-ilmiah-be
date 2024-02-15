@@ -67,62 +67,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redis/bloom@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@redis/bloom@npm:1.2.0"
-  peerDependencies:
-    "@redis/client": ^1.0.0
-  checksum: 10c0/7dde8e67188164e96226c8a5c78ebd2801f1662947371e78fb95fb180c1e9ddff8d237012eb5e9182775be61cb546f67f759927cdaee0d178d863ee290e1fb27
-  languageName: node
-  linkType: hard
-
-"@redis/client@npm:1.5.14":
-  version: 1.5.14
-  resolution: "@redis/client@npm:1.5.14"
-  dependencies:
-    cluster-key-slot: "npm:1.1.2"
-    generic-pool: "npm:3.9.0"
-    yallist: "npm:4.0.0"
-  checksum: 10c0/e8036ef1bce676891a492c198251238b3eb19eb7120ff974291f2a4e8cea97ac0f4aabbc0c59f40a923dcb43456e4e2a29b7287bd6a91535330e5e4631d9b176
-  languageName: node
-  linkType: hard
-
-"@redis/graph@npm:1.1.1":
-  version: 1.1.1
-  resolution: "@redis/graph@npm:1.1.1"
-  peerDependencies:
-    "@redis/client": ^1.0.0
-  checksum: 10c0/64199db2cb3669c4911af8aba3b7116c4c2c1df37ca74b2a65555e62c863935a0cea74bc41bd92acf2e551074eb2a30c75f54a9f439b40e0f9bb67fc5fb66614
-  languageName: node
-  linkType: hard
-
-"@redis/json@npm:1.0.6":
-  version: 1.0.6
-  resolution: "@redis/json@npm:1.0.6"
-  peerDependencies:
-    "@redis/client": ^1.0.0
-  checksum: 10c0/ac6072c33ac4552cf4748b6b2dc5fdc63f7a9396e6453b59ee03831cdde8d495caa90786e04036633d058c39cdf5c6fce903272c43ff942941b15c157ac34498
-  languageName: node
-  linkType: hard
-
-"@redis/search@npm:1.1.6":
-  version: 1.1.6
-  resolution: "@redis/search@npm:1.1.6"
-  peerDependencies:
-    "@redis/client": ^1.0.0
-  checksum: 10c0/690b30dc914f013c10c03899ddc5585194e891323c14f4d974d51d912944e50b5f21208e0fc5eed958dde87b730254846e9ffe5caf0b54ff1ff2c64a051df057
-  languageName: node
-  linkType: hard
-
-"@redis/time-series@npm:1.0.5":
-  version: 1.0.5
-  resolution: "@redis/time-series@npm:1.0.5"
-  peerDependencies:
-    "@redis/client": ^1.0.0
-  checksum: 10c0/3c7f31f64a5f215534db6f0a10845be046ffee2928972037713acdd72cdb9ccc4a476ecce70d896333346a8f4081bd2139a4d50da4d19b9d61a6836066188d68
-  languageName: node
-  linkType: hard
-
 "abbrev@npm:1":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -351,13 +295,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cluster-key-slot@npm:1.1.2":
-  version: 1.1.2
-  resolution: "cluster-key-slot@npm:1.1.2"
-  checksum: 10c0/d7d39ca28a8786e9e801eeb8c770e3c3236a566625d7299a47bb71113fb2298ce1039596acb82590e598c52dbc9b1f088c8f587803e697cb58e1867a95ff94d3
-  languageName: node
-  linkType: hard
-
 "color-convert@npm:^2.0.1":
   version: 2.0.1
   resolution: "color-convert@npm:2.0.1"
@@ -413,10 +350,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cookie-parser@npm:^1.4.6":
+  version: 1.4.6
+  resolution: "cookie-parser@npm:1.4.6"
+  dependencies:
+    cookie: "npm:0.4.1"
+    cookie-signature: "npm:1.0.6"
+  checksum: 10c0/9c2ade5459290802cd472a2d2a6e46fbd7de3e8514e02bfed5edfde892d77733c7f89d9d2015f752a9087680429b416972d7aba748bf6824e21eb680c8556383
+  languageName: node
+  linkType: hard
+
 "cookie-signature@npm:1.0.6":
   version: 1.0.6
   resolution: "cookie-signature@npm:1.0.6"
   checksum: 10c0/b36fd0d4e3fef8456915fcf7742e58fbfcc12a17a018e0eb9501c9d5ef6893b596466f03b0564b81af29ff2538fd0aa4b9d54fe5ccbfb4c90ea50ad29fe2d221
+  languageName: node
+  linkType: hard
+
+"cookie@npm:0.4.1":
+  version: 0.4.1
+  resolution: "cookie@npm:0.4.1"
+  checksum: 10c0/4d7bc798df3d0f34035977949cd6b7d05bbab47d7dcb868667f460b578a550cd20dec923832b8a3a107ef35aba091a3975e14f79efacf6e39282dc0fed6db4a1
   languageName: node
   linkType: hard
 
@@ -727,13 +681,6 @@ __metadata:
     strip-ansi: "npm:^6.0.1"
     wide-align: "npm:^1.1.2"
   checksum: 10c0/75230ccaf216471e31025c7d5fcea1629596ca20792de50c596eb18ffb14d8404f927cd55535aab2eeecd18d1e11bd6f23ec3c2e9878d2dda1dc74bccc34b913
-  languageName: node
-  linkType: hard
-
-"generic-pool@npm:3.9.0":
-  version: 3.9.0
-  resolution: "generic-pool@npm:3.9.0"
-  checksum: 10c0/6b314d0d71170d5cbaf7162c423f53f8d6556b2135626a65bcdc03c089840b0a2f59eeb2d907939b8200e945eaf71ceb6630426f22d2128a1d242aec4b232aa7
   languageName: node
   linkType: hard
 
@@ -1622,12 +1569,12 @@ __metadata:
   resolution: "pub-karya-ilmiah-be@workspace:."
   dependencies:
     bcrypt: "npm:^5.1.1"
+    cookie-parser: "npm:^1.4.6"
     cors: "npm:^2.8.5"
     dotenv: "npm:^16.4.1"
     express: "npm:^4.18.2"
     jsonwebtoken: "npm:^9.0.2"
     pg: "npm:^8.11.3"
-    redis: "npm:^4.6.13"
     uuid: "npm:^9.0.1"
   languageName: unknown
   linkType: soft
@@ -1668,20 +1615,6 @@ __metadata:
     string_decoder: "npm:^1.1.1"
     util-deprecate: "npm:^1.0.1"
   checksum: 10c0/e37be5c79c376fdd088a45fa31ea2e423e5d48854be7a22a58869b4e84d25047b193f6acb54f1012331e1bcd667ffb569c01b99d36b0bd59658fb33f513511b7
-  languageName: node
-  linkType: hard
-
-"redis@npm:^4.6.13":
-  version: 4.6.13
-  resolution: "redis@npm:4.6.13"
-  dependencies:
-    "@redis/bloom": "npm:1.2.0"
-    "@redis/client": "npm:1.5.14"
-    "@redis/graph": "npm:1.1.1"
-    "@redis/json": "npm:1.0.6"
-    "@redis/search": "npm:1.1.6"
-    "@redis/time-series": "npm:1.0.5"
-  checksum: 10c0/5fbbf61fc244ca0d0eeca648e470de92d30a494f724f17fac434a7b2713425fc67be31736e17dc53798eba7d236cdfb66e330034ccced51f0faa1a3df1711d5d
   languageName: node
   linkType: hard
 
@@ -2122,7 +2055,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yallist@npm:4.0.0, yallist@npm:^4.0.0":
+"yallist@npm:^4.0.0":
   version: 4.0.0
   resolution: "yallist@npm:4.0.0"
   checksum: 10c0/2286b5e8dbfe22204ab66e2ef5cc9bbb1e55dfc873bbe0d568aa943eb255d131890dfd5bf243637273d31119b870f49c18fcde2c6ffbb7a7a092b870dc90625a

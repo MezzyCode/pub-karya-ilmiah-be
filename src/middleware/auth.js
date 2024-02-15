@@ -1,20 +1,31 @@
 const jwt = require('jsonwebtoken');
 
-function verifyToken(req, res, next) {
-  const token = req.headers.authorization;
-
-  if (!token) {
-    return res.status(403).json({ error: 'Token not provided.' });
-  }
-
-  jwt.verify(token, process.env.JWT_SECRET_KEY, (err, decoded) => {
-    if (err) {
-      return res.status(401).json({ error: 'Invalid token.' });
-    }
-
-    req.user = decoded;
-    next();
+const createToken = (res, user) => {
+  const token = jwt.sign({ id: user.id, email: user.email, role: user.role }, process.env.JWT_SECRET_KEY, {
+    expiresIn: '2h'
   });
+  res.cookie('access_token', token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production'
+  });
+  res.json({ message: 'Login successful.' });
 }
 
-module.exports = { verifyToken }
+const verifyToken = (req, res, next) => {
+  const token = req.cookies.access_token;
+
+  if (!token) {
+    return res.status(401).json({ error: 'Unauthorized: No token provided.' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    req.currentUser = decoded;
+    next();
+  } catch (error) {
+    console.error('Error verifying token:', error);
+    res.status(401).json({ error: 'Unauthorized: Invalid token.' });
+  }
+}
+
+module.exports = { createToken, verifyToken }

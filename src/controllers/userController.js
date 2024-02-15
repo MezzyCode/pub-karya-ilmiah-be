@@ -59,6 +59,8 @@ const editUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
+  const { id, role } = req.currentUser;
+
   try {
     const user = await models.getUserById(req.params.id);
 
@@ -66,10 +68,12 @@ const deleteUser = async (req, res) => {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    const username = user.username;
-    await models.deleteUserById(user.user_id);
-
-    res.status(200).json({ message: `${username} successfully deleted` });
+    if (role <= 2) {
+      await models.deleteUserById(user.id);
+      res.status(200).json({ message: `${user.username} successfully deleted` });
+    } else {
+      res.status(403).json({ error: 'Forbidden: Insufficient privileges.' });
+    }
   } catch (err) {
     handleQueryError(req, res, err);
   }

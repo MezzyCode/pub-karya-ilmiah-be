@@ -81,7 +81,7 @@ COMMENT ON CONSTRAINT email_unique ON public.users
 Create a .env file in the root directory with the following content:
 
 ```ini
-PORT=3000
+NODE_PORT=3000
 
 # POSTGRES
 PG_DB_HOST=localhost
